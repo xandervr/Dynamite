@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		C05B56841FEB19010017F7DB /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		C05B56861FEB1A510017F7DB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C05D290D1FEA96EB006097B2 /* Dynamite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dynamite; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05D29101FEA96EB006097B2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C05D291B1FEA987D006097B2 /* sha2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha2.h; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		C05D290F1FEA96EB006097B2 /* Dynamite */ = {
 			isa = PBXGroup;
 			children = (
+				C05B56861FEB1A510017F7DB /* README.md */,
 				C05B56841FEB19010017F7DB /* Makefile */,
 				C05D29251FEAD8E2006097B2 /* Blockchain */,
 				C05D29211FEAB49A006097B2 /* Block */,
