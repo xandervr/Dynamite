@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <ctime>
 #include "../Block/Block.hpp"
+#include "../CPU/CPU.hpp"
 
 #define DIFFICULTY_OFFSET 2016
 

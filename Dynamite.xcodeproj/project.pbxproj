@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C05B56891FEB1AEB0017F7DB /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = C05B56881FEB1AEB0017F7DB /* Makefile */; };
+		C05B568D1FEB2AF80017F7DB /* CPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05B568B1FEB2AF80017F7DB /* CPU.cpp */; };
 		C05D29111FEA96EB006097B2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05D29101FEA96EB006097B2 /* main.cpp */; };
 		C05D291D1FEA987D006097B2 /* sha2.c in Sources */ = {isa = PBXBuildFile; fileRef = C05D291C1FEA987D006097B2 /* sha2.c */; };
 		C05D29201FEA9BA7006097B2 /* SHA256.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05D291E1FEA9BA7006097B2 /* SHA256.cpp */; };
@@ -30,6 +31,8 @@
 /* Begin PBXFileReference section */
 		C05B56871FEB1AEB0017F7DB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		C05B56881FEB1AEB0017F7DB /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
+		C05B568B1FEB2AF80017F7DB /* CPU.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPU.cpp; sourceTree = "<group>"; };
+		C05B568C1FEB2AF80017F7DB /* CPU.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CPU.hpp; sourceTree = "<group>"; };
 		C05D290D1FEA96EB006097B2 /* Dynamite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dynamite; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05D29101FEA96EB006097B2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C05D291B1FEA987D006097B2 /* sha2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha2.h; sourceTree = "<group>"; };
@@ -53,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C05B568A1FEB2AE50017F7DB /* CPU */ = {
+			isa = PBXGroup;
+			children = (
+				C05B568B1FEB2AF80017F7DB /* CPU.cpp */,
+				C05B568C1FEB2AF80017F7DB /* CPU.hpp */,
+			);
+			path = CPU;
+			sourceTree = "<group>";
+		};
 		C05D29041FEA96EB006097B2 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +84,7 @@
 		C05D290F1FEA96EB006097B2 /* Dynamite */ = {
 			isa = PBXGroup;
 			children = (
+				C05B568A1FEB2AE50017F7DB /* CPU */,
 				C05B56881FEB1AEB0017F7DB /* Makefile */,
 				C05B56871FEB1AEB0017F7DB /* README.md */,
 				C05D29251FEAD8E2006097B2 /* Blockchain */,
@@ -171,6 +184,7 @@
 				C05B56891FEB1AEB0017F7DB /* Makefile in Sources */,
 				C05D29111FEA96EB006097B2 /* main.cpp in Sources */,
 				C05D29241FEAB534006097B2 /* Block.cpp in Sources */,
+				C05B568D1FEB2AF80017F7DB /* CPU.cpp in Sources */,
 				C05D291D1FEA987D006097B2 /* sha2.c in Sources */,
 				C05D29281FEAD8F2006097B2 /* Blockchain.cpp in Sources */,
 				C05D29201FEA9BA7006097B2 /* SHA256.cpp in Sources */,
