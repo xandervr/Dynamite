@@ -7,9 +7,15 @@
 //
 
 #include <iostream>
+#include "Blockchain.hpp"
+
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    Blockchain dynamite(1);
+    for (int i = 0; i < 1000; i++)
+        dynamite.addBlock("xander", "cis", 1.5);
+    dynamite.startMiner();
     return 0;
 }

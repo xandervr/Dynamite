@@ -1,0 +1,45 @@
+//
+//  Block.hpp
+//  Dynamite
+//
+//  Created by Xander Van Raemdonck on 20/12/2017.
+//  Copyright © 2017 TnTap. All rights reserved.
+//
+
+#ifndef Block_hpp
+#define Block_hpp
+
+#include <stdio.h>
+#include "SHA512.hpp"
+
+struct block_data {
+    char * receiver;
+    char * sender;
+    double amount;
+};
+
+class Block {
+private:
+    char * hash;
+    struct block_data * data;
+    char * previousHash;
+    int index;
+    int nonce;
+    int timestamp;
+    char * calculateHash();
+    bool verified;
+public:
+    Block(char* sender, char* receiver, double amount, int timestamp, char* previousHash, int index);
+    Block(int timestamp);
+    char* getHash();
+    char* getPreviousHash();
+    int getTimestamp();
+    int getIndex();
+    int getNonce();
+    void setNonce(int);
+    bool isVerified();
+    void setVerified(bool);
+    struct block_data * getData();
+};
+
+#endif /* Block_hpp */
