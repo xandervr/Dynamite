@@ -29,6 +29,7 @@ private:
     struct Chain * chain_root;
     struct Chain * getLastChain();
     Block * getLastUnverifiedBlock();
+    void printMiningSpeed(Block*, time_t);
     bool isValid(Block*, char*);
     char* calculateHash(Block*);
 public:

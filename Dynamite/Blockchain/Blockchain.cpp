@@ -54,6 +54,13 @@ char* Blockchain::calculateHash(Block* block) {
     return result;
 }
 
+void Blockchain::printMiningSpeed(Block * curr_block, time_t start) {
+    std::time_t inter = std::time(nullptr);
+    std::time_t diff = inter - start;
+    double hashes_per_second = diff == 0 ? ((double)curr_block->getNonce() - MIN_NONCE) / 1000 : (((double)curr_block->getNonce() - MIN_NONCE) / (double)diff / 1000);
+    printf("%.2fkH/s\r", hashes_per_second);
+}
+
 /**
  *
  * PUBLIC
@@ -91,6 +98,7 @@ bool Blockchain::mineBlock() {
         char* try_hash = calculateHash(last_unverified_block);
         while(!isValid(last_unverified_block, try_hash)) {
             try_hash = calculateHash(last_unverified_block);
+            printMiningSpeed(last_unverified_block, start);
         };
         std::time_t end = std::time(nullptr);
         std::time_t diff = end - start;
