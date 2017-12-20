@@ -35,11 +35,11 @@ Block::Block(int timestamp) {
 char * Block::calculateHash() {
     SHA sha;
     std::string s_timestamp = std::to_string(this->timestamp);
-    char * plain = (char*)malloc(sizeof(struct block_data) + sizeof(char) * 129 + sizeof(char));
+    char * plain = (char*)malloc(sizeof(struct block_data) + sizeof(char) * 65 + sizeof(char));
     strcpy(plain, this->previousHash == NULL ? "" : this->previousHash);
     strcat(plain, s_timestamp.c_str());
     strcat(plain, this->data == NULL ? "" : "test"); // TODO FIXME
-    char * result = sha.sha512(plain);
+    char * result = sha.sha256(plain);
     return result;
 }
 

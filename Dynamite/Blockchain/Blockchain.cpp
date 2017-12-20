@@ -46,10 +46,10 @@ bool Blockchain::isValid(Block* block, char* try_hash) {
 char* Blockchain::calculateHash(Block* block) {
     SHA sha;
     std::string s_nonce = std::to_string(block->getNonce());
-    char* plain = (char*)malloc(sizeof(char*) * 129 + sizeof(char*) * 129);
+    char* plain = (char*)malloc(sizeof(char*) * 65 + sizeof(char*) * 65);
     strcpy(plain, block->getHash());
     strcat(plain, s_nonce.c_str());
-    char * result = sha.sha512(plain);
+    char * result = sha.sha256(plain);
     free(plain);
     return result;
 }

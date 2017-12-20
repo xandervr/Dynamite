@@ -10,7 +10,7 @@
 #define Block_hpp
 
 #include <stdio.h>
-#include "../Hashing/SHA512.hpp"
+#include "../Hashing/SHA256.hpp"
 
 #define MIN_NONCE 60 * 60 * 1000
 
