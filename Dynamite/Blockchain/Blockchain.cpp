@@ -87,11 +87,15 @@ void Blockchain::addBlock(char* sender, char* receiver, double amount) {
 bool Blockchain::mineBlock() {
     Block* last_unverified_block = getLastUnverifiedBlock();
     if (last_unverified_block->getPreviousHash() != NULL && !last_unverified_block->isVerified()) {
+        std::time_t start = std::time(nullptr);
         char* try_hash = calculateHash(last_unverified_block);
         while(!isValid(last_unverified_block, try_hash)) {
             try_hash = calculateHash(last_unverified_block);
         };
-        printf("Block %d mined! - %s - %d (Diff: %d)\n", last_unverified_block->getIndex(), try_hash, last_unverified_block->getNonce(), this->difficulty);
+        std::time_t end = std::time(nullptr);
+        std::time_t diff = end - start;
+        double hashes_per_second = diff == 0 ? ((double)last_unverified_block->getNonce() - MIN_NONCE) / 1000 : (((double)last_unverified_block->getNonce() - MIN_NONCE) / (double)diff / 1000);
+        printf("Block %d mined! - %s - %d (Diff: %d, took %ld seconds, %.2fkH/s)\n", last_unverified_block->getIndex(), try_hash, last_unverified_block->getNonce(), this->difficulty, diff, hashes_per_second);
         this->verified++;
         return true;
     } else {

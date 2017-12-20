@@ -13,7 +13,7 @@ Block::Block(char* sender, char* receiver, double amount, int timestamp, char* p
     d->receiver = receiver;
     d->sender = sender;
     d->amount = amount;
-    this->nonce = 0;
+    this->nonce = MIN_NONCE;
     this->index = index;
     this->data = d;
     this->timestamp = timestamp;
@@ -26,7 +26,7 @@ Block::Block(int timestamp) {
     this->data = NULL;
     this->timestamp = timestamp;
     this->previousHash = NULL;
-    this->nonce = 0;
+    this->nonce = MIN_NONCE;
     this->index = 0;
     this->verified = true;
     this->hash = calculateHash();

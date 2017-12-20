@@ -10,6 +10,7 @@
 #define Blockchain_hpp
 
 #include <stdio.h>
+#include <ctime>
 #include "../Block/Block.hpp"
 
 #define DIFFICULTY_OFFSET 2016

@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include "../Hashing/SHA512.hpp"
 
+#define MIN_NONCE 60 * 60 * 1000
+
 struct block_data {
     char * receiver;
     char * sender;
