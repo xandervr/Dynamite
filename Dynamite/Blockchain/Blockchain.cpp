@@ -67,11 +67,12 @@ Blockchain::Blockchain(int difficulty) {
     this->chain_root->block = (Block*)malloc(sizeof(Block));
     memcpy(this->chain_root->block, &genesisBlock, sizeof(genesisBlock));
     this->chain_root->next = NULL;
+    this->chain_end = chain_root;
     this->index++;
 }
 
 void Blockchain::addBlock(char* sender, char* receiver, double amount) {
-    struct Chain * last_chain = getLastChain();
+    struct Chain * last_chain = this->chain_end;
     Block * previousBlock = last_chain->block;
     Block block(sender, receiver, amount, 0, previousBlock->getHash(), this->index);
     struct Chain * new_chain = (struct Chain*)malloc(sizeof(struct Chain) * sizeof(Block));
@@ -79,6 +80,7 @@ void Blockchain::addBlock(char* sender, char* receiver, double amount) {
     memcpy(new_chain->block, &block, sizeof(block));
     new_chain->next = NULL;
     last_chain->next = new_chain;
+    this->chain_end = new_chain;
     this->index++;
 }
 
@@ -100,7 +102,7 @@ bool Blockchain::mineBlock() {
 void Blockchain::startMiner() {
     bool mined = mineBlock();
     while(mined) {
-        if (verified % 50 == 0)
+        if (verified % DIFFICULTY_OFFSET == 0)
             difficulty++;
         mined = mineBlock();
     }

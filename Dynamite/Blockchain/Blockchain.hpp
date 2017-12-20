@@ -10,7 +10,9 @@
 #define Blockchain_hpp
 
 #include <stdio.h>
-#include "Block.hpp"
+#include "../Block/Block.hpp"
+
+#define DIFFICULTY_OFFSET 2016
 
 struct Chain {
     Block * block;
@@ -22,6 +24,7 @@ private:
     int difficulty;
     int index = 0;
     int verified = 0;
+    struct Chain * chain_end;
     struct Chain * chain_root;
     struct Chain * getLastChain();
     Block * getLastUnverifiedBlock();

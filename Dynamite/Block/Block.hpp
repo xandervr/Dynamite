@@ -10,7 +10,7 @@
 #define Block_hpp
 
 #include <stdio.h>
-#include "SHA512.hpp"
+#include "../Hashing/SHA512.hpp"
 
 struct block_data {
     char * receiver;
