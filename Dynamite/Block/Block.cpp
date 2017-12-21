@@ -13,6 +13,7 @@ Block::Block(char* sender, char* receiver, double amount, int timestamp, char* p
     d->receiver = receiver;
     d->sender = sender;
     d->amount = amount;
+    d->fee = 50;
     this->nonce = MIN_NONCE;
     this->index = index;
     this->data = d;
@@ -23,7 +24,11 @@ Block::Block(char* sender, char* receiver, double amount, int timestamp, char* p
 }
 
 Block::Block(int timestamp) {
-    this->data = NULL;
+    this->data = (struct block_data*)malloc(sizeof(struct block_data));
+    this->data->sender = NULL;
+    this->data->receiver = NULL;
+    this->data->amount = 0;
+    this->data->fee = 50;
     this->timestamp = timestamp;
     this->previousHash = NULL;
     this->nonce = MIN_NONCE;

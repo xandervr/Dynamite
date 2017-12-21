@@ -14,7 +14,7 @@
 #include "../Block/Block.hpp"
 #include "../CPU/CPU.hpp"
 
-#define DIFFICULTY_OFFSET 2016
+#define DIFFICULTY_OFFSET 20
 
 struct Chain {
     Block * block;

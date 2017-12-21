@@ -60,7 +60,8 @@ void Blockchain::printMiningSpeed(Block * curr_block, time_t start) {
     
     double hashes_per_second = diff == 0 ? ((double)curr_block->getNonce() - MIN_NONCE) / 1000 : (((double)curr_block->getNonce() - MIN_NONCE) / (double)diff / 1000);
     #ifdef __APPLE__
-        printf("%.2fkH/s Temp: %llu°C\r", hashes_per_second, get_cpu_temp());
+        //printf("%.2fkH/s Temp: %llu°C\r", hashes_per_second, get_cpu_temp());
+        printf("%.2fkH/s\r", hashes_per_second);
     #else
         printf("%.2fkH/s\r", hashes_per_second);
     #endif

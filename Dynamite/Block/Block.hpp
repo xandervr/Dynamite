@@ -18,6 +18,7 @@ struct block_data {
     char * receiver;
     char * sender;
     double amount;
+    double fee;
 };
 
 class Block {
