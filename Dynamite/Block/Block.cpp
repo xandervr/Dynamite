@@ -64,11 +64,11 @@ int Block::getIndex() {
     return this->index;
 }
 
-int Block::getNonce() {
+long Block::getNonce() {
     return this->nonce;
 }
 
-void Block::setNonce(int nonce) {
+void Block::setNonce(long nonce) {
     this->nonce = nonce;
 }
 

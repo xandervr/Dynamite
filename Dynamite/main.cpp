@@ -13,7 +13,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    Blockchain dynamite(5);
+    Blockchain dynamite(10);
     cout << "Adding 100.000 blocks to blockchain..." << endl;
     for (int i = 0; i < 100000; i++) {
         printf("%d\r", i);

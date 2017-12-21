@@ -61,7 +61,7 @@ void Blockchain::printMiningSpeed(Block * curr_block, time_t start) {
     double hashes_per_second = diff == 0 ? ((double)curr_block->getNonce() - MIN_NONCE) / 1000 : (((double)curr_block->getNonce() - MIN_NONCE) / (double)diff / 1000);
     #ifdef __APPLE__
         //printf("%.2fkH/s Temp: %llu°C\r", hashes_per_second, get_cpu_temp());
-        printf("%.2fkH/s\r", hashes_per_second);
+        printf("%.2fkH/s - Nonce: %ld\r", hashes_per_second, curr_block->getNonce());
     #else
         printf("%.2fkH/s\r", hashes_per_second);
     #endif
@@ -110,7 +110,7 @@ bool Blockchain::mineBlock() {
         std::time_t end = std::time(nullptr);
         std::time_t diff = end - start;
         double hashes_per_second = diff == 0 ? ((double)last_unverified_block->getNonce() - MIN_NONCE) / 1000 : (((double)last_unverified_block->getNonce() - MIN_NONCE) / (double)diff / 1000);
-        printf("Block %d mined! - %s - %d (Diff: %d, took %ld seconds, %.2fkH/s)\n", last_unverified_block->getIndex(), try_hash, last_unverified_block->getNonce(), this->difficulty, diff, hashes_per_second);
+        printf("Block %d mined! - %s - %ld (Diff: %d, took %ld seconds, %.2fkH/s)\n", last_unverified_block->getIndex(), try_hash, last_unverified_block->getNonce(), this->difficulty, diff, hashes_per_second);
         this->verified++;
         return true;
     } else {

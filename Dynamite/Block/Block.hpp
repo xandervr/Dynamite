@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "../Hashing/SHA256.hpp"
 
-#define MIN_NONCE 60 * 60 * 1000
+#define MIN_NONCE 2420000000//60 * 60 * 1000
 
 struct block_data {
     char * receiver;
@@ -27,7 +27,7 @@ private:
     struct block_data * data;
     char * previousHash;
     int index;
-    int nonce;
+    long nonce;
     int timestamp;
     char * calculateHash();
     bool verified;
@@ -38,8 +38,8 @@ public:
     char* getPreviousHash();
     int getTimestamp();
     int getIndex();
-    int getNonce();
-    void setNonce(int);
+    long getNonce();
+    void setNonce(long);
     bool isVerified();
     void setVerified(bool);
     struct block_data * getData();
