@@ -57,12 +57,14 @@ char* Blockchain::calculateHash(Block* block) {
 void Blockchain::printMiningSpeed(Block * curr_block, time_t start) {
     std::time_t inter = std::time(nullptr);
     std::time_t diff = inter - start;
+    
     double hashes_per_second = diff == 0 ? ((double)curr_block->getNonce() - MIN_NONCE) / 1000 : (((double)curr_block->getNonce() - MIN_NONCE) / (double)diff / 1000);
     #ifdef __APPLE__
         printf("%.2fkH/s Temp: %llu°C\r", hashes_per_second, get_cpu_temp());
     #else
         printf("%.2fkH/s\r", hashes_per_second);
     #endif
+    
 }
 
 /**
