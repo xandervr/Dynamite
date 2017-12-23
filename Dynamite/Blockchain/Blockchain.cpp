@@ -85,6 +85,43 @@ Blockchain::Blockchain(int difficulty) {
     this->index++;
 }
 
+Blockchain::Blockchain(char * path) {
+    loadFromFileSystem(path);
+}
+
+void Blockchain::saveToFileSystem(char * path) {
+    FILE * fh = fopen(path, "wb");
+    fwrite(&this->difficulty, sizeof(int), 1, fh);
+    fwrite(&this->verified, sizeof(int), 1, fh);
+    struct Chain * curr_chain = this->chain_root;
+    while(curr_chain->next != NULL) {
+        fwrite(curr_chain, sizeof(struct Chain), 1, fh);
+        curr_chain = curr_chain->next;
+    }
+    fclose(fh);
+}
+
+void Blockchain::loadFromFileSystem(char * path) {
+    FILE * fh = fopen(path, "rb");
+    if (fh != NULL) {
+        fread(&this->difficulty, sizeof(int), 1, fh);
+        fread(&this->verified, sizeof(int), 1, fh);
+        this->chain_root = (struct Chain*)malloc(sizeof(struct Chain));
+        size_t bytes_read = fread(chain_root, sizeof(struct Chain), 1, fh);
+        this->chain_end = chain_root;
+        this->index++;
+        while (fh != NULL && bytes_read > 0) {
+            struct Chain* chain = (struct Chain*)malloc(sizeof(struct Chain));
+            bytes_read = fread(chain, sizeof(struct Chain), 1, fh);
+            chain->next = NULL;
+            this->chain_end->next = chain;
+            this->chain_end = chain;
+            this->index++;
+        }
+    }
+    fclose(fh);
+}
+
 void Blockchain::addBlock(char* sender, char* receiver, double amount) {
     struct Chain * last_chain = this->chain_end;
     Block * previousBlock = last_chain->block;

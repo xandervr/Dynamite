@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 #include <ctime>
+#include <fstream>
+#include <stdlib.h>
 #include "../Block/Block.hpp"
 #include "../CPU/CPU.hpp"
 
@@ -35,6 +37,9 @@ private:
     char* calculateHash(Block*);
 public:
     Blockchain(int);
+    Blockchain(char*);
+    void saveToFileSystem(char*);
+    void loadFromFileSystem(char*);
     void addBlock(char*, char*, double);
     bool mineBlock();
     void startMiner();

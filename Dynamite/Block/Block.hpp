@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "../Hashing/SHA256.hpp"
 
-#define MIN_NONCE 2420000000//60 * 60 * 1000
+#define MIN_NONCE 60 * 60 * 1000
 
 struct block_data {
     char * receiver;
