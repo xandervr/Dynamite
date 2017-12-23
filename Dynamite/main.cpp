@@ -19,10 +19,10 @@ int main(int argc, const char * argv[]) {
         printf("%d\r", i);
         dynamite.addBlock("xander", "cis", 1.5);
     }
+    cout << "Mining started..." << endl;
     dynamite.startMiner();
     dynamite.saveToFileSystem("chain");
     Blockchain test("chain");
-    cout << "Mining started..." << endl;
     
     return 0;
 }
