@@ -14,6 +14,8 @@
 		C05D29201FEA9BA7006097B2 /* SHA256.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05D291E1FEA9BA7006097B2 /* SHA256.cpp */; };
 		C05D29241FEAB534006097B2 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05D29221FEAB534006097B2 /* Block.cpp */; };
 		C05D29281FEAD8F2006097B2 /* Blockchain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C05D29261FEAD8F2006097B2 /* Blockchain.cpp */; };
+		C0FBB8FF21B293A1008BC418 /* MerkleTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0FBB8FD21B293A1008BC418 /* MerkleTree.cpp */; };
+		C0FBB90321B29697008BC418 /* Transaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0FBB90121B29697008BC418 /* Transaction.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +45,10 @@
 		C05D29231FEAB534006097B2 /* Block.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Block.hpp; sourceTree = "<group>"; };
 		C05D29261FEAD8F2006097B2 /* Blockchain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Blockchain.cpp; sourceTree = "<group>"; };
 		C05D29271FEAD8F2006097B2 /* Blockchain.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Blockchain.hpp; sourceTree = "<group>"; };
+		C0FBB8FD21B293A1008BC418 /* MerkleTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MerkleTree.cpp; sourceTree = "<group>"; };
+		C0FBB8FE21B293A1008BC418 /* MerkleTree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MerkleTree.hpp; sourceTree = "<group>"; };
+		C0FBB90121B29697008BC418 /* Transaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Transaction.cpp; sourceTree = "<group>"; };
+		C0FBB90221B29697008BC418 /* Transaction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Transaction.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,8 @@
 		C05D290F1FEA96EB006097B2 /* Dynamite */ = {
 			isa = PBXGroup;
 			children = (
+				C0FBB90021B29652008BC418 /* Transaction */,
+				C0FBB8FC21B29382008BC418 /* MerkleTree */,
 				C05B568A1FEB2AE50017F7DB /* CPU */,
 				C05B56881FEB1AEB0017F7DB /* Makefile */,
 				C05B56871FEB1AEB0017F7DB /* README.md */,
@@ -122,6 +130,24 @@
 				C05D29271FEAD8F2006097B2 /* Blockchain.hpp */,
 			);
 			path = Blockchain;
+			sourceTree = "<group>";
+		};
+		C0FBB8FC21B29382008BC418 /* MerkleTree */ = {
+			isa = PBXGroup;
+			children = (
+				C0FBB8FD21B293A1008BC418 /* MerkleTree.cpp */,
+				C0FBB8FE21B293A1008BC418 /* MerkleTree.hpp */,
+			);
+			path = MerkleTree;
+			sourceTree = "<group>";
+		};
+		C0FBB90021B29652008BC418 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				C0FBB90121B29697008BC418 /* Transaction.cpp */,
+				C0FBB90221B29697008BC418 /* Transaction.hpp */,
+			);
+			path = Transaction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0FBB90321B29697008BC418 /* Transaction.cpp in Sources */,
 				C05B56891FEB1AEB0017F7DB /* Makefile in Sources */,
 				C05D29111FEA96EB006097B2 /* main.cpp in Sources */,
 				C05D29241FEAB534006097B2 /* Block.cpp in Sources */,
@@ -188,6 +215,7 @@
 				C05D291D1FEA987D006097B2 /* sha2.c in Sources */,
 				C05D29281FEAD8F2006097B2 /* Blockchain.cpp in Sources */,
 				C05D29201FEA9BA7006097B2 /* SHA256.cpp in Sources */,
+				C0FBB8FF21B293A1008BC418 /* MerkleTree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
